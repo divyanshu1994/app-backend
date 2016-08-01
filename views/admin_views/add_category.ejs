@@ -1,0 +1,27 @@
+<% layout('layout') %>
+
+<div class="container">
+<h2>Add a category</h2>
+
+<% if(fail.length>0) { %>
+<div class="alert alert-danger">
+    <%= fail %>
+    </div>
+
+    <% } %>
+
+<% if(added.length>0) { %>
+<div class="alert alert-success">
+    <%= added %>
+    </div>
+
+    <% } %>
+
+<form method="post">
+<div class="form-group">
+<label> Name : </label>
+<input type="text" name="name" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+</div>

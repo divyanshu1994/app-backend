@@ -1,0 +1,30 @@
+<% layout('layout') %>
+
+<div class="container">
+
+<h1> Search results of <%= query %> </h1>
+<br>
+
+<div class="row">
+    <% for(var i=0;i<products.length;i++) { %>
+<div class="col-md-4">
+<div class="thumbnail">
+    <img src="<%= products[i].image %>">
+    <h3><%= products[i].name %> </h3>
+    <p><%= products[i].category.name %> </p>
+
+    <p><%= products[i].price %></p>
+</div>
+</div>
+
+<% } %>
+
+<% if(products.length==0)  { %>
+
+Sorry No products were found 
+
+<% } %>
+
+</div>
+
+</div>

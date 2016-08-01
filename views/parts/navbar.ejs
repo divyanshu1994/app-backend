@@ -1,0 +1,90 @@
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Ecommerce</a>
+        </div>
+        
+        <ul class="nav navbar-nav navbar-right">
+
+<li>
+  <div >
+<form method="post" action="/search">
+<div class="form-group">
+ 
+  <input size="70" class="form-control" name="q" type="text" id="query-box" placeholder="Search for products" minlength="3">
+</div>
+</form>
+</div>
+
+</li>
+
+   <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories</a>
+
+            <ul class="dropdown-menu">
+                <% for(var i=0;i<categories.length;i++) { %>
+              
+              <li><a href="/category/<%= categories[i]._id %>/page/1"><%= categories[i].name %></a></li>
+              <% } %>
+              </ul>
+          </li>
+
+
+          <% if(!user)  { %>
+
+          
+
+          <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Signup/Login</a>
+
+            <ul class="dropdown-menu">
+              <li><a href="/user/signup">SignUp</a></li>
+              <li><a href="/user/login">Login</a></li>
+
+              </ul>
+          </li>
+
+          <% } else { %>
+             <li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= user.profile.name %></a>
+
+            <ul class="dropdown-menu">
+              <li><a href="/user/profile">Profile</a></li>
+               <li><a href="/user/mycart">Cart</a> </li>
+              <li><a href="/user/logout">Logout</a></li>
+             
+
+              </ul>
+          </li>
+
+          <% } %>
+          
+          
+          </ul>
+      </div>
+    </nav>
+
+ 
+
+<script >
+
+  // $(function(){
+  //   $("#query-box").keyup(function()
+  //   {
+  //     var search=$(this).val();
+     
+  //     $.ajax({
+  //       method:'POST',
+  //       url:'/search',
+  //       data:{
+  //         search
+  //       },
+  //       dataType:'json'
+  //     });
+  //   });
+  // });
+  
+  </script>

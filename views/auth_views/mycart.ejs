@@ -1,0 +1,26 @@
+<% layout('layout') %>
+
+<div class="container">
+    <h1> My Cart </h1>
+    
+    <br>
+
+
+    <% for(var i=0;i<cart.length;i++) { %>
+
+        <div class="row">
+            <% var product=cart[i].product %>
+
+            <img style="width:100px;height:70px" class="pull-left" src="<%= product.image %>">
+            <h3><%= product.name %></h3>
+            <p> Added On : <%= cart[i].addedOn %> </p>
+            
+            <br>
+            <br>
+            <br>
+            </div>
+
+        <% } %>
+
+    
+ </div>

@@ -1,0 +1,29 @@
+<% layout('layout') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+<img style="width:500px ; height:350px" src="<%= product.image %>">
+</div>
+<div class="col-md-6">
+    <h2><%= product.name %></h2>
+    <p><%= product.category.name %></p>
+    <br>
+    <p><%= product.price %></p>
+    <br>
+
+    <% if(user) { %>
+    <a href="/purchase/<%= product._id %>" >
+    <button class="btn btn-primary">Buy </button>
+    </a>
+    <% } else { %>
+
+    <a href="/user/signup" >
+    <button class="btn btn-primary">Signup to buy </button>
+    </a>
+
+    <% } %>
+    </div>
+
+    </div>
+</div>

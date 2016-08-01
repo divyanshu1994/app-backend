@@ -1,0 +1,28 @@
+body{
+    padding-top:100px;
+}
+
+.banner
+{
+    margin-top:-4%;
+}
+
+.blue
+{
+    background-color: #157ed2;
+    
+}
+#query-box
+{
+    margin-top:10px;
+}
+#search-results
+{
+    width:200px;
+    height:300px;
+    overflow: scroll;
+    position: fixed;
+    background-color: #fff;
+    padding: 10px;
+
+}
